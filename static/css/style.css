@@ -114,3 +114,26 @@ p,
    height: 500px;
    object-fit: contain;
 }
+
+.seccion-likes {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+   font-size: 0.95rem;
+}
+
+.btn-like {
+   background-color: #ffd15c;
+   color: #000;
+   border: none;
+   border-radius: 5px;
+   padding: 6px 18px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: transform 0.1s ease;
+   margin-left: 7px;
+}
+
+.btn-like:hover {
+   transform: scale(1.05);
+}
