@@ -137,3 +137,10 @@ p,
 .btn-like:hover {
    transform: scale(1.05);
 }
+
+.elboton{
+   height: 100;
+   width: 20;
+   border-radius: 20px;
+   padding: 6px 18px;
+}

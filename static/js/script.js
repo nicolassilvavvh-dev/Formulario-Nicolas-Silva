@@ -24,3 +24,15 @@ boton.addEventListener("click", function () {
         boton.style.color = "white";
     }
 });
+
+const imagen1 = document.getElementById("imagen1");
+
+if (imagen1) {
+    imagen1.addEventListener("mouseover", function () {
+        imagen1.src = "static/images/images (1).png";
+    });
+
+    imagen1.addEventListener("mouseout", function () {
+        imagen1.src = "static/images/images (2).png";
+    });
+}
