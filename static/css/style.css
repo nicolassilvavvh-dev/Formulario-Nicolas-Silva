@@ -6,19 +6,28 @@
    scroll-behavior: smooth;
 }
 
+html,
+body {
+   overflow-x: hidden;
+}
+
 body {
    background-color: #121212;
    color: #e0e0e0;
    line-height: 1.6;
 }
+img,
+video {
+   max-width: 100%;
+   height: auto;
+}
 
-/* Header & Navegación */
 .barra-navegacion {
    display: flex;
    justify-content: space-between;
    align-items: center;
    background-color: #1e1e1e;
-   padding: 1rem 2rem;
+   padding: 1rem 1.5rem;
    border-bottom: 1px solid #2d2d2d;
    position: sticky;
    top: 0;
@@ -26,7 +35,6 @@ body {
    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Efecto Scroll en Navbar */
 .barra-navegacion.sombra {
    background-color: #141414;
    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -41,7 +49,7 @@ body {
 
 .nav {
    display: flex;
-   gap: 1.5rem;
+   gap: 1.2rem;
 }
 
 .nav a.hover {
@@ -55,23 +63,21 @@ body {
    color: #3b82f6;
 }
 
-/* Layout Principal */
 .contenedor-principal {
    max-width: 800px;
-   margin: 2.5rem auto;
-   padding: 0 1.5rem;
+   margin: 2rem auto;
+   padding: 0 1rem;
 }
 
 section {
    background-color: #1e1e1e;
    border: 1px solid #2d2d2d;
    border-radius: 8px;
-   padding: 1.5rem;
+   padding: 1.2rem;
    margin-bottom: 1.5rem;
    transition: transform 0.3s ease, opacity 0.5s ease;
 }
 
-/* Efecto Revelar al Scroll */
 .reveal {
    opacity: 0;
    transform: translateY(30px);
@@ -99,11 +105,10 @@ p,
    margin-bottom: 0.5rem;
 }
 
-/* Habilidades */
 .Habilidades {
    display: flex;
    flex-wrap: wrap;
-   gap: 0.8rem;
+   gap: 0.6rem;
    margin-top: 1rem;
 }
 
@@ -114,9 +119,9 @@ p,
    background-color: #262626;
    color: #ffffff;
    border: 1px solid #333333;
-   padding: 0.4rem 0.9rem;
+   padding: 0.4rem 0.8rem;
    border-radius: 20px;
-   font-size: 0.9rem;
+   font-size: 0.88rem;
    margin: 0;
 }
 
@@ -126,7 +131,6 @@ p,
    object-fit: contain;
 }
 
-/* Desplegable / Acordeón */
 .oculto {
    display: none;
 }
@@ -139,14 +143,13 @@ p,
    border-radius: 4px;
 }
 
-/* Botones */
 .btn-secundario,
 .btn-filtro,
 .btn-enviar {
    background-color: #3b82f6;
    color: #fff;
    border: none;
-   padding: 8px 16px;
+   padding: 10px 18px;
    border-radius: 5px;
    cursor: pointer;
    font-weight: 500;
@@ -163,6 +166,7 @@ p,
    background-color: #262626;
    color: #a0a0a0;
    margin-right: 5px;
+   margin-bottom: 5px;
 }
 
 .btn-filtro.activo {
@@ -172,9 +176,10 @@ p,
 
 .filtros-contenedor {
    margin: 1rem 0;
+   display: flex;
+   flex-wrap: wrap;
 }
 
-/* Galería y Filtros */
 .galeria-proyectos {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -198,17 +203,29 @@ p,
 
 .img-galeria {
    width: 100%;
-   height: 140px;
+   height: 160px;
    object-fit: cover;
 }
 
 .titulo-proyecto {
-   font-size: 0.9rem;
+   font-size: 0.95rem;
    margin-top: 8px;
    color: #fff;
 }
 
-/* Sección de Likes e Interactiva */
+.contenedor-video {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-top: 10px;
+}
+
+.video-responsive {
+   width: 100%;
+   border-radius: 6px;
+   background-color: #000;
+}
+
 .seccion-likes {
    display: flex;
    align-items: center;
@@ -220,20 +237,20 @@ p,
    color: #000;
    border: none;
    border-radius: 5px;
-   padding: 6px 18px;
+   padding: 8px 18px;
    font-weight: bold;
    cursor: pointer;
 }
 
 .elboton {
    border-radius: 20px;
-   padding: 6px 18px;
+   padding: 8px 18px;
    cursor: pointer;
 }
 
 .imagen {
-   height: 150px;
-   width: 150px;
+   height: 130px;
+   width: 130px;
    object-fit: contain;
    margin-top: 10px;
    transition: transform 0.2s;
@@ -243,7 +260,6 @@ p,
    transform: scale(1.05);
 }
 
-/* Formulario */
 #formulario-contacto {
    display: flex;
    flex-direction: column;
@@ -261,8 +277,9 @@ textarea {
    background-color: #262626;
    border: 1px solid #333;
    color: #fff;
-   padding: 8px 12px;
+   padding: 10px 12px;
    border-radius: 4px;
+   font-size: 1rem;
 }
 
 input:focus,
@@ -275,15 +292,72 @@ textarea:focus {
    margin-top: 5px;
 }
 
-.link{
+.contacto-item {
    display: flex;
-   flex-direction: row;
-   height: 50px;
-   width: 50px;
+   align-items: center;
+   gap: 10px;
+   margin-top: 10px;
+   margin-bottom: 8px;
 }
 
-.link2{
-   border: none;
+.contacto-item .link-icono {
+   width: 26px;
+   height: 26px;
+   object-fit: contain;
+}
+
+.link2 {
+   color: #3b82f6;
    text-decoration: none;
-   color: #00e1ff56;
+   font-weight: 500;
+   transition: color 0.3s ease;
+}
+
+.link2:hover {
+   color: #60a5fa;
+   text-decoration: underline;
+}
+
+.correo-texto {
+   color: #a0a0a0;
+   font-size: 0.95rem;
+   margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+   .barra-navegacion {
+      flex-direction: column;
+      gap: 0.8rem;
+      padding: 0.8rem 1rem;
+      text-align: center;
+   }
+
+   .nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem 1rem;
+   }
+
+   .nav a.hover {
+      font-size: 0.9rem;
+      padding: 4px 6px;
+   }
+
+   .contenedor-principal {
+      padding: 0 0.6rem;
+      margin: 1rem auto;
+   }
+
+   section {
+      padding: 1rem;
+   }
+
+   .galeria-proyectos {
+      grid-template-columns: 1fr;
+
+   }
+
+   .img-galeria {
+      height: 180px;
+   }
 }
